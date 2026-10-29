@@ -6,6 +6,7 @@ import { GraphView, type GEdge, type GNode } from '../GraphView.tsx';
 import { SourceView } from '../SourceView.tsx';
 import { SplitLayout } from '../components/SplitLayout.tsx';
 import { PathLabel } from '../components/PathLabel.tsx';
+import { useToast } from '../components/Toast.tsx';
 import type { ImpactReport, RefsResp } from '../types.ts';
 
 type Item = ImpactReport['direct'][number];
@@ -66,6 +67,18 @@ export function ImpactScreen({ onOpenInExplorer }: { onOpenInExplorer: (id: stri
       setBusy(false);
     }
   };
+
+  // Ctrl/⌘+Enter va buyruqlar paneli: oxirgi `run` ni chaqiradi
+  const runRef = useRef(run);
+  runRef.current = run;
+  const canRun = !busy && !(refs && !refs.git) && !(kind === 'range' && !base.trim());
+  const canRunRef = useRef(canRun);
+  canRunRef.current = canRun;
+  useEffect(() => {
+    const h = () => { if (canRunRef.current) void runRef.current(); };
+    window.addEventListener('xray:run-impact', h);
+    return () => window.removeEventListener('xray:run-impact', h);
+  }, []);
 
   // Til almashganda hisobot matnlari (sabablar, xabarlar) server tomonida qayta yasaladi: jimgina yangilaymiz (tab/filtr saqlanadi)
   const firstLang = useRef(true);
@@ -141,6 +154,7 @@ export function ImpactScreen({ onOpenInExplorer }: { onOpenInExplorer: (id: stri
 
           {r && (
             <div className="summary" data-testid="impact-report">
+              <Dashboard r={r} onJump={switchTab} />
               <div role="tablist" className="tabs-s" aria-label={t('imp.tabsLabel')}>
                 {tabBtn('changed', t('imp.tabChanged'), r.stats.changedFiles)}
                 {tabBtn('direct', t('imp.tabDirect'), r.stats.direct, 'n-direct')}
@@ -160,6 +174,7 @@ export function ImpactScreen({ onOpenInExplorer }: { onOpenInExplorer: (id: stri
         </div>
 
         <div className="tab-body">
+          {busy && !r && <div className="skeleton" aria-hidden>{[0, 1, 2, 3].map((i) => <div key={i} className="sk-row" style={{ animationDelay: `${i * 80}ms` }} />)}</div>}
           {!r && !err && !busy && !noGit && <div className="empty">{t('imp.emptyA')}<br />{t('imp.emptyB')}<br /><span className="small">{t('imp.emptyC')}</span></div>}
 
           {r && tab === 'changed' && (
@@ -304,11 +319,41 @@ function Evidence({ ev, onOpen }: { ev: Ev; onOpen: (id: string) => void }) {
 function TestCommand({ cmd }: { cmd: string }) {
   const { t } = useI18n();
   const [done, setDone] = useState(false);
+  const toast = useToast();
   return (
     <div className="testcmd" data-testid="test-command">
       <div className="muted small">{t('imp.testCmd')}</div>
       <pre className="sig">{cmd}</pre>
-      <button className="small" onClick={() => { void navigator.clipboard?.writeText(cmd).then(() => { setDone(true); setTimeout(() => setDone(false), 1500); }); }}>{done ? t('imp.copied') : t('imp.copy')}</button>
+      <button className="small" onClick={() => { void navigator.clipboard?.writeText(cmd).then(() => { setDone(true); toast(t('toast.copied')); setTimeout(() => setDone(false), 1500); }); }}>{done ? t('imp.copied') : t('imp.copy')}</button>
+    </div>
+  );
+}
+
+function Dashboard({ r, onJump }: { r: ImpactReport; onJump: (t: Tab) => void }) {
+  const { t } = useI18n();
+  const all = [...r.direct, ...r.indirect];
+  const ver = all.filter((i) => i.confidence === 'verified').length;
+  const pos = all.length - ver;
+  const tiles: { tab: Tab; label: string; n: number; tone: string }[] = [
+    { tab: 'direct', label: t('imp.tabDirect'), n: r.stats.direct, tone: 'bad' },
+    { tab: 'indirect', label: t('imp.tabIndirect'), n: r.stats.indirect, tone: 'warn' },
+    ...(r.routes.length ? [{ tab: 'routes' as Tab, label: t('imp.tabRoutes'), n: r.stats.routes, tone: 'accent' }] : []),
+    { tab: 'tests', label: t('imp.tabTests'), n: r.stats.tests, tone: 'ok' },
+    { tab: 'uncertain', label: t('imp.tabUncertain'), n: r.uncertain.length, tone: 'grey' },
+  ];
+  return (
+    <div className="dash" data-testid="impact-dash" title={t('imp.sumHint')}>
+      <div className="dash-tiles">
+        {tiles.map((x) => (
+          <button key={x.tab} className={`dash-tile tone-${x.tone}${x.n === 0 ? ' zero' : ''}`} onClick={() => onJump(x.tab)}>
+            <span className="dash-n">{x.n}</span><span className="dash-l">{x.label}</span>
+          </button>
+        ))}
+      </div>
+      <div className="dash-proof" aria-label={t('imp.sumProof')}>
+        <div className="dash-proof-h"><span>{t('imp.sumProof')}</span><span className="muted small">{all.length ? `${ver} ${t('imp.sumVerified')} · ${pos} ${t('imp.sumPossible')}` : t('imp.sumNone')}</span></div>
+        <div className="bar"><i className="v" style={{ width: all.length ? `${(ver / all.length) * 100}%` : 0 }} /><i className="p" style={{ width: all.length ? `${(pos / all.length) * 100}%` : 0 }} /></div>
+      </div>
     </div>
   );
 }

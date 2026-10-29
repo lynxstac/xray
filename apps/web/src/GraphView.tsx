@@ -79,6 +79,7 @@ export function GraphView({ nodes, edges, focusId, layout = 'concentric', onSele
         { selector: 'node', style: { label: 'data(label)', 'font-size': 10, color: '#d7e3ee', 'text-valign': 'bottom', 'text-margin-y': 4, 'text-outline-color': '#0b0f14', 'text-outline-width': 2, width: 22, height: 22, 'background-color': 'data(color)', shape: 'data(shape)' as never, 'border-width': 1, 'border-color': '#0b0f14', 'text-max-width': '120px', 'text-wrap': 'ellipsis' } },
         { selector: 'node[?center]', style: { width: 36, height: 36, 'border-width': 3, 'border-color': '#33e1ff', 'font-weight': 700, 'underlay-color': '#33e1ff', 'underlay-opacity': 0.22, 'underlay-padding': 12, 'underlay-shape': 'ellipse' } },
         { selector: 'node[?hot]', style: { 'border-width': 3, 'border-color': '#ff6b6b' } },
+        { selector: '.dim', style: { opacity: 0.18 } },
         { selector: 'node:selected', style: { 'border-width': 3, 'border-color': '#ffffff' } },
         { selector: 'edge', style: { width: 1.3, 'line-color': 'data(color)', 'target-arrow-color': 'data(color)', 'target-arrow-shape': 'triangle', 'arrow-scale': 0.8, 'curve-style': 'bezier', opacity: 0.8 } },
         { selector: 'edge[conf = "possible"]', style: { 'line-style': 'dashed' } },
@@ -86,6 +87,16 @@ export function GraphView({ nodes, edges, focusId, layout = 'concentric', onSele
       ],
     });
     c.on('tap', 'node', (e) => onSel.current?.(e.target.id()));
+    // hover: tugun va qo'shnilarini yoritadi, qolganini xiralashtiradi
+    c.on('mouseover', 'node', (e) => {
+      const keep = e.target.closedNeighborhood();
+      c.elements().not(keep).addClass('dim');
+      if (el.current) el.current.style.cursor = 'pointer';
+    });
+    c.on('mouseout', 'node', () => {
+      c.elements().removeClass('dim');
+      if (el.current) el.current.style.cursor = '';
+    });
     cy.current = c;
     const node = el.current;
     const mark = () => { moved.current = true; };

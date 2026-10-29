@@ -83,6 +83,13 @@ const uz = {
   'split.width': '{title} paneli kengligi', 'split.handleTitle': "Sudrang · ← → · ikki marta bosing: asl o'lcham", 'split.collapse': '{title} panelini yopish', 'split.expand': '{title} panelini ochish',
   'graph.aria': 'Kod grafigi', 'graph.fit': "Sig'dirish", 'graph.zoomIn': 'Yaqinlashtirish', 'graph.zoomOut': 'Uzoqlashtirish',
   'src.failed': "Manba o'qilmadi: {err}", 'src.loading': 'Yuklanmoqda…',
+
+  // palitra / yorliqlar / mavzu
+  'pal.title': 'Buyruqlar paneli', 'pal.ph': "Buyruq yozing yoki symbol qidiring…", 'pal.empty': 'Hech narsa topilmadi.', 'pal.go': "O'tish", 'pal.actions': 'Amallar', 'pal.symbols': "Symbol'lar",
+  'cmd.run': 'Impact tahlilini ishga tushirish', 'cmd.theme': "Mavzuni almashtirish (yorug'/qorong'i)", 'cmd.lang': "Tilni almashtirish (EN/UZ)", 'cmd.shortcuts': 'Klaviatura yorliqlari', 'cmd.open': 'Panelni ochish',
+  'sc.title': 'Klaviatura yorliqlari', 'sc.palette': 'Buyruqlar paneli', 'sc.tabs': "Bo'limlar (Repozitoriy, Explorer, Impact, Savol)", 'sc.run': 'Impact tahlili (Impact ichida)', 'sc.help': 'Shu oyna', 'sc.esc': 'Yopish',
+  'theme.toggle': 'Mavzu', 'theme.dark': "Qorong'i", 'theme.light': "Yorug'", 'toast.copied': 'Nusxalandi', 'toast.done': 'Tayyor',
+  'imp.sumTitle': 'Natija bir qarashda', 'imp.sumProof': 'Dalil darajasi', 'imp.sumVerified': 'isbotlangan', 'imp.sumPossible': 'taxminiy', 'imp.sumNone': "Ta'sirlangan element topilmadi", 'imp.sumHint': "Bosing — tegishli bo'limga o'tadi",
 } as const;
 
 export type UIKey = keyof typeof uz;
@@ -155,6 +162,13 @@ const en: Record<UIKey, string> = {
   'split.width': '{title} panel width', 'split.handleTitle': 'Drag · ← → · double-click to reset', 'split.collapse': 'Collapse the {title} panel', 'split.expand': 'Expand the {title} panel',
   'graph.aria': 'Code graph', 'graph.fit': 'Fit to view', 'graph.zoomIn': 'Zoom in', 'graph.zoomOut': 'Zoom out',
   'src.failed': 'Could not read source: {err}', 'src.loading': 'Loading…',
+
+  // palette / shortcuts / theme
+  'pal.title': 'Command palette', 'pal.ph': 'Type a command or search symbols…', 'pal.empty': 'Nothing found.', 'pal.go': 'Go to', 'pal.actions': 'Actions', 'pal.symbols': 'Symbols',
+  'cmd.run': 'Run impact analysis', 'cmd.theme': 'Toggle theme (light/dark)', 'cmd.lang': 'Switch language (EN/UZ)', 'cmd.shortcuts': 'Keyboard shortcuts', 'cmd.open': 'Open panel',
+  'sc.title': 'Keyboard shortcuts', 'sc.palette': 'Command palette', 'sc.tabs': 'Sections (Repository, Explorer, Impact, Ask)', 'sc.run': 'Run impact analysis (on Impact)', 'sc.help': 'This dialog', 'sc.esc': 'Close',
+  'theme.toggle': 'Theme', 'theme.dark': 'Dark', 'theme.light': 'Light', 'toast.copied': 'Copied', 'toast.done': 'Done',
+  'imp.sumTitle': 'At a glance', 'imp.sumProof': 'Proof level', 'imp.sumVerified': 'verified', 'imp.sumPossible': 'possible', 'imp.sumNone': 'No affected items found', 'imp.sumHint': 'Click to jump to the section',
 };
 
 const CATALOG: Record<Lang, Record<UIKey, string>> = { uz, en };
