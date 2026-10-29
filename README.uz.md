@@ -90,7 +90,7 @@ Mustaqil oracle = TypeScript LanguageService `findReferences`. Fayl darajasida, 
 
 ## Testlar
 
-`pnpm check` = typecheck + 156 unit/integratsiya testi + 30 ta brauzer (Playwright, Chrome) E2E testi (jumladan panel o'lchamini o'zgartirish, saqlash, tor ekran, kontent sig'ishi). Asosiylari:
+`pnpm check` = typecheck + 156 unit/integratsiya testi + 34 ta brauzer (Playwright, Chrome) E2E testi (jumladan panel o'lchamini o'zgartirish, saqlash, tor ekran, kontent sig'ishi). Asosiylari:
 
 - qo'lda yozilgan `expected-graph.json` bilan aynan moslik (6 xil edge turi);
 - Impact: 6 ssenariy, qo'lda hisoblangan ground truth, precision = recall = 1.0;

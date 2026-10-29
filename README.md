@@ -114,7 +114,7 @@ Local-only server bound to `127.0.0.1` with a token; protection against DNS rebi
 
 ## Testing
 
-`pnpm check` = typecheck + **156 unit/integration tests** + **30 browser E2E tests** (Playwright, Chrome), including exact match against a hand-written `expected-graph.json`, six impact scenarios with hand-computed ground truth, `incremental ≡ full`, and the security cases above.
+`pnpm check` = typecheck + **156 unit/integration tests** + **34 browser E2E tests** (Playwright, Chrome), including exact match against a hand-written `expected-graph.json`, six impact scenarios with hand-computed ground truth, `incremental ≡ full`, and the security cases above.
 
 ## Documentation
 
