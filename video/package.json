@@ -1,0 +1,6 @@
+{
+  "name": "@xray/video",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@playwright/test": "^1.64.1", "@xray/server": "workspace:*" }
+}

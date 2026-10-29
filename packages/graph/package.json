@@ -1,0 +1,13 @@
+{
+  "name": "@xray/graph",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@xray/core": "workspace:*",
+    "@xray/scanner": "workspace:*",
+    "@xray/parser": "workspace:*",
+    "typescript": "~6.0.2"
+  }
+}

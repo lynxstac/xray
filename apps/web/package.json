@@ -1,0 +1,27 @@
+{
+  "name": "@xray/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "cytoscape": "^3.34.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@xray/impact": "workspace:*",
+    "@xray/server": "workspace:*",
+    "@xray/ai": "workspace:*",
+    "@xray/core": "workspace:*",
+    "vite": "^8.3.5"
+  }
+}

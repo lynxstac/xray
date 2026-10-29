@@ -1,0 +1,31 @@
+{
+  "name": "project-xray",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@12.13.0",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json && pnpm -C apps/web typecheck",
+    "build:web": "pnpm -C apps/web build",
+    "e2e": "pnpm build:web && pnpm -C apps/web exec playwright test",
+    "shots": "XRAY_SHOTS=1 pnpm e2e",
+    "check": "pnpm typecheck && pnpm test && pnpm e2e",
+    "xray": "node packages/cli/src/main.ts",
+    "serve": "pnpm build:web && node packages/cli/src/main.ts serve",
+    "demo": "node demo/run.ts",
+    "bench:index": "node bench/index-bench.ts",
+    "bench:accuracy": "node bench/accuracy.ts",
+    "bench:replay": "node bench/replay.ts",
+    "video:setup": "bash video/tts/setup.sh",
+    "video:audio": "video/tts/.venv/bin/python video/tts/synth.py video/script.en.json video/work/audio af_heart 1.0",
+    "video:words": "python3 video/wordtimes.py video/script.en.json video/work/audio",
+    "video:record": "node video/record.ts",
+    "video:render": "node video/render.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

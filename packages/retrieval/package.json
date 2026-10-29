@@ -1,0 +1,8 @@
+{
+  "name": "@xray/retrieval",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": { "@xray/core": "workspace:*", "@xray/graph": "workspace:*" }
+}

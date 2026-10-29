@@ -1,0 +1,8 @@
+{
+  "name": "@xray/parser",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {"@xray/core":"workspace:*","typescript":"~6.0.2"}
+}

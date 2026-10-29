@@ -1,0 +1,8 @@
+{
+  "name": "@xray/scanner",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {"@xray/core":"workspace:*","ignore":"^7.0.0"}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@xray/impact",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@xray/core": "workspace:*",
+    "@xray/graph": "workspace:*",
+    "@xray/git": "workspace:*",
+    "@xray/parser": "workspace:*"
+  }
+}

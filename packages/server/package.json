@@ -1,0 +1,16 @@
+{
+  "name": "@xray/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@xray/core": "workspace:*",
+    "@xray/graph": "workspace:*",
+    "@xray/scanner": "workspace:*",
+    "@xray/git": "workspace:*",
+    "@xray/impact": "workspace:*",
+    "@xray/retrieval": "workspace:*",
+    "@xray/ai": "workspace:*"
+  }
+}

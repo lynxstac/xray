@@ -1,0 +1,18 @@
+{
+  "name": "@xray/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": { "xray": "./src/main.ts" },
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@xray/core": "workspace:*",
+    "@xray/graph": "workspace:*",
+    "@xray/git": "workspace:*",
+    "@xray/impact": "workspace:*",
+    "@xray/retrieval": "workspace:*",
+    "@xray/ai": "workspace:*",
+    "@xray/server": "workspace:*",
+    "@xray/mcp": "workspace:*"
+  }
+}

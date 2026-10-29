@@ -1,0 +1,15 @@
+node_modules/
+.tmp-test/
+.xray/
+*.log
+apps/web/dist/
+apps/web/test-results/
+apps/web/playwright-report/
+bench/results/
+video/tts/.venv/
+video/tts/models/
+video/out/
+video/work/
+video/out*/
+video/work*/
+.github/

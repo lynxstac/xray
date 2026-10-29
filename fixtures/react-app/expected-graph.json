@@ -1,0 +1,86 @@
+{
+  "_comment": "QO'LDA yozilgan ground truth (parser chiqishidan generatsiya QILINMAGAN). Format: 'from -> to'. Node ID: fayl uchun path, symbol uchun path#qualifiedName.",
+  "imports": [
+    "src/hooks/useArticle.ts -> src/lib/index.ts",
+    "src/hooks/useArticles.ts -> src/lib/api.ts",
+    "src/lib/index.ts -> src/lib/api.ts",
+    "src/lib/index.ts -> src/lib/format.ts",
+    "src/components/ArticleCard.tsx -> src/lib/index.ts",
+    "src/components/index.ts -> src/components/ArticleCard.tsx",
+    "src/components/index.ts -> src/components/Layout.tsx",
+    "src/pages/ArticlePage.tsx -> src/components/index.ts",
+    "src/pages/ArticlePage.tsx -> src/hooks/useArticle.ts",
+    "src/pages/ListPage.tsx -> src/components/index.ts",
+    "src/pages/ListPage.tsx -> src/hooks/useArticles.ts",
+    "src/cycle/a.ts -> src/cycle/b.ts",
+    "src/cycle/b.ts -> src/cycle/a.ts",
+    "src/dyn/loader.ts -> src/pages/ListPage.tsx",
+    "src/hooks/useArticle.test.ts -> src/testkit.ts",
+    "src/hooks/useArticle.test.ts -> src/hooks/useArticle.ts",
+    "src/lib/api.test.ts -> src/testkit.ts",
+    "src/lib/api.test.ts -> src/lib/api.ts",
+    "src/components/ArticleCard.test.tsx -> src/testkit.ts",
+    "src/components/ArticleCard.test.tsx -> src/components/ArticleCard.tsx"
+  ],
+  "calls": [
+    "src/lib/api.ts#fetchArticles -> src/lib/api.ts#request",
+    "src/lib/api.ts#fetchArticle -> src/lib/api.ts#request",
+    "src/hooks/useArticle.ts#useArticle -> src/lib/api.ts#fetchArticle",
+    "src/hooks/useArticles.ts#useArticles -> src/lib/api.ts#fetchArticles",
+    "src/components/ArticleCard.tsx#ArticleCard -> src/lib/format.ts#formatDate",
+    "src/pages/ArticlePage.tsx#ArticlePage -> src/hooks/useArticle.ts#useArticle",
+    "src/pages/ListPage.tsx#ListPage -> src/hooks/useArticles.ts#useArticles",
+    "src/cycle/a.ts#a -> src/cycle/b.ts#b",
+    "src/cycle/b.ts#b -> src/cycle/a.ts#a",
+    "src/hooks/useArticle.test.ts -> src/testkit.ts#it",
+    "src/hooks/useArticle.test.ts -> src/hooks/useArticle.ts#useArticle",
+    "src/lib/api.test.ts -> src/testkit.ts#it",
+    "src/lib/api.test.ts -> src/lib/api.ts#fetchArticles",
+    "src/components/ArticleCard.test.tsx -> src/testkit.ts#it"
+  ],
+  "renders": [
+    "src/pages/ArticlePage.tsx#ArticlePage -> src/components/Layout.tsx#Layout",
+    "src/pages/ArticlePage.tsx#ArticlePage -> src/components/ArticleCard.tsx#ArticleCard",
+    "src/pages/ListPage.tsx#ListPage -> src/components/Layout.tsx#Layout",
+    "src/components/ArticleCard.test.tsx -> src/components/ArticleCard.tsx#ArticleCard"
+  ],
+  "references": [
+    "src/lib/api.ts#fetchArticles -> src/lib/api.ts#BASE",
+    "src/lib/api.ts#fetchArticle -> src/lib/api.ts#BASE"
+  ],
+  "tests": [
+    "src/hooks/useArticle.test.ts -> src/testkit.ts",
+    "src/hooks/useArticle.test.ts -> src/hooks/useArticle.ts",
+    "src/lib/api.test.ts -> src/testkit.ts",
+    "src/lib/api.test.ts -> src/lib/api.ts",
+    "src/components/ArticleCard.test.tsx -> src/testkit.ts",
+    "src/components/ArticleCard.test.tsx -> src/components/ArticleCard.tsx"
+  ],
+  "exports": [
+    "src/lib/api.ts -> src/lib/api.ts#BASE",
+    "src/lib/api.ts -> src/lib/api.ts#fetchArticles",
+    "src/lib/api.ts -> src/lib/api.ts#fetchArticle",
+    "src/lib/format.ts -> src/lib/format.ts#formatDate",
+    "src/lib/format.ts -> src/lib/format.ts#unusedDefault",
+    "src/lib/index.ts -> src/lib/api.ts#BASE",
+    "src/lib/index.ts -> src/lib/api.ts#fetchArticles",
+    "src/lib/index.ts -> src/lib/api.ts#fetchArticle",
+    "src/lib/index.ts -> src/lib/format.ts#formatDate",
+    "src/hooks/useArticle.ts -> src/hooks/useArticle.ts#useArticle",
+    "src/hooks/useArticles.ts -> src/hooks/useArticles.ts#useArticles",
+    "src/components/Layout.tsx -> src/components/Layout.tsx#Layout",
+    "src/components/ArticleCard.tsx -> src/components/ArticleCard.tsx#ArticleCard",
+    "src/components/index.ts -> src/components/ArticleCard.tsx#ArticleCard",
+    "src/components/index.ts -> src/components/Layout.tsx#Layout",
+    "src/pages/ArticlePage.tsx -> src/pages/ArticlePage.tsx#ArticlePage",
+    "src/pages/ListPage.tsx -> src/pages/ListPage.tsx#ListPage",
+    "src/cycle/a.ts -> src/cycle/a.ts#a",
+    "src/cycle/b.ts -> src/cycle/b.ts#b",
+    "src/dyn/loader.ts -> src/dyn/loader.ts#loadPage",
+    "src/dyn/loader.ts -> src/dyn/loader.ts#lazy",
+    "src/testkit.ts -> src/testkit.ts#it"
+  ],
+  "unresolved": [
+    "src/dyn/loader.ts|dynamic-import"
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "title": "X-Ray",
+  "scenes": [
+    {
+      "id": "intro",
+      "say": "Meet X-Ray. A local-first tool that shows what a code change may affect, with evidence.",
+      "caption": "See what a code change may affect — with evidence",
+      "headline": "X-Ray",
+      "chapter": "Intro",
+      "reel": true,
+      "crop": {
+        "cx": 640,
+        "cy": 360,
+        "side": 904
+      },
+      "group": "Intro"
+    },
+    {
+      "id": "open",
+      "say": "Point it at any TypeScript or Next J S repository. Everything runs on your machine. Your code is never uploaded, and never executed.",
+      "caption": "Runs on your machine. Your code is never uploaded or executed.",
+      "headline": "100% local",
+      "chapter": "Open a repository",
+      "reel": true,
+      "crop": {
+        "cx": 560,
+        "cy": 360,
+        "side": 904
+      },
+      "group": "Open a repository"
+    },
+    {
+      "id": "report",
+      "say": "Whatever it skips, or cannot resolve, is listed openly. Nothing is hidden.",
+      "caption": "Skipped and unresolved items are listed openly",
+      "headline": "Nothing hidden",
+      "chapter": "Honest index report",
+      "reel": false,
+      "crop": {
+        "cx": 640,
+        "cy": 420,
+        "side": 640
+      },
+      "group": "Open a repository"
+    },
+    {
+      "id": "explore",
+      "say": "Search any symbol, and see just its neighborhood in the code graph. Even huge projects stay readable.",
+      "caption": "A code graph you can actually read",
+      "headline": "Graph explorer",
+      "chapter": "Graph explorer",
+      "reel": false,
+      "crop": {
+        "cx": 640,
+        "cy": 380,
+        "side": 720
+      },
+      "group": "Graph explorer"
+    },
+    {
+      "id": "panels",
+      "say": "Panels are resizable, and the layout adapts to your screen.",
+      "caption": "Resizable panels, adaptive layout",
+      "headline": "Your layout",
+      "chapter": "Resizable panels",
+      "reel": false,
+      "crop": {
+        "cx": 640,
+        "cy": 380,
+        "side": 720
+      },
+      "group": "Graph explorer"
+    },
+    {
+      "id": "impact",
+      "say": "Now the main feature: change impact. Pick a Git diff. In this example, a single commit.",
+      "caption": "Change impact — start from a Git diff",
+      "headline": "Change impact",
+      "chapter": "Change impact",
+      "reel": true,
+      "crop": {
+        "cx": 330,
+        "cy": 200,
+        "side": 660
+      },
+      "group": "Change impact"
+    },
+    {
+      "id": "summary",
+      "say": "X-Ray shows what changed, what may be affected, and what to check.",
+      "caption": "What changed · What may be affected · What to check",
+      "headline": "Three answers",
+      "chapter": "Report overview",
+      "reel": false,
+      "crop": {
+        "cx": 420,
+        "cy": 260,
+        "side": 560
+      },
+      "group": "Change impact"
+    },
+    {
+      "id": "direct",
+      "say": "Direct impact: code that uses the changed element right away.",
+      "caption": "Direct dependents",
+      "headline": "Direct impact",
+      "chapter": "Direct dependents",
+      "reel": true,
+      "crop": {
+        "cx": 430,
+        "cy": 380,
+        "side": 860
+      },
+      "group": "Change impact"
+    },
+    {
+      "id": "evidence",
+      "say": "Every result carries evidence. The exact line, the chain that connects it, and how reliable it is.",
+      "caption": "Every result carries evidence: line · chain · reliability",
+      "headline": "Evidence",
+      "chapter": "Evidence for every result",
+      "reel": true,
+      "crop": {
+        "cx": 1065,
+        "cy": 200,
+        "side": 430
+      },
+      "group": "Evidence and routes"
+    },
+    {
+      "id": "indirect",
+      "say": "Indirect dependents show the whole path, step by step.",
+      "caption": "Indirect dependents — the whole path",
+      "headline": "The full path",
+      "chapter": "Indirect dependents",
+      "reel": false,
+      "crop": {
+        "cx": 1000,
+        "cy": 380,
+        "side": 560
+      },
+      "group": "Evidence and routes"
+    },
+    {
+      "id": "routes",
+      "say": "For Next J S, it also lists the routes that may be affected, even through layouts.",
+      "caption": "Next.js routes that may be affected",
+      "headline": "Affected routes",
+      "chapter": "Next.js routes",
+      "reel": true,
+      "crop": {
+        "cx": 420,
+        "cy": 420,
+        "side": 840
+      },
+      "group": "Evidence and routes"
+    },
+    {
+      "id": "ask",
+      "say": "You can also ask questions about the codebase. Answers rely only on evidence from your code.",
+      "caption": "Ask the codebase — answers come from evidence",
+      "headline": "Ask your code",
+      "chapter": "Ask the codebase",
+      "reel": false,
+      "crop": {
+        "cx": 640,
+        "cy": 330,
+        "side": 640
+      },
+      "group": "Ask your code, privately"
+    },
+    {
+      "id": "askoff",
+      "say": "A.I. is off by default. It runs only with your explicit consent.",
+      "caption": "AI is off by default — only with your consent",
+      "headline": "Private by default",
+      "chapter": "Private by default",
+      "reel": false,
+      "crop": {
+        "cx": 640,
+        "cy": 330,
+        "side": 640
+      },
+      "group": "Ask your code, privately"
+    },
+    {
+      "id": "end",
+      "say": "Measured, not claimed. Its verified relationships matched an independent oracle on seven real projects. X-Ray. Local-first, and evidence-based.",
+      "caption": "Measured, not claimed — verified on 7 real projects",
+      "headline": "X-Ray",
+      "chapter": "Measured, not claimed",
+      "reel": true,
+      "crop": {
+        "cx": 640,
+        "cy": 360,
+        "side": 720
+      },
+      "group": "Measured, not claimed",
+      "card": true
+    }
+  ],
+  "lang": "en",
+  "ui": {
+    "rangeLabel": "Branch/commit range",
+    "enableAiLabel": "Enable AI (optional)"
+  },
+  "cards": {
+    "intro": {
+      "title": "X-RAY",
+      "line1": "See what a code change may affect",
+      "line2": "Local-first · evidence-based · nothing leaves your machine"
+    },
+    "end": {
+      "title": "Measured, not claimed",
+      "line1": "Verified relationships matched an independent oracle<br/>on 7 real projects (3,414 symbols)",
+      "line2": "Repo code is never executed · nothing is written to your repo · AI only with your consent",
+      "line3": "file-level comparison with TypeScript find-references · see docs/BENCHMARKS.md"
+    }
+  },
+  "reel": {
+    "introHeadline": "See your impact",
+    "endCard": {
+      "title": "Measured,<br/>not claimed",
+      "n1": "7",
+      "n1label": "real projects",
+      "n2": "3,414",
+      "n2label": "symbols checked",
+      "line1": "Verified relationships matched an independent oracle",
+      "line2": "Local-first · never executes your code · AI only with consent"
+    }
+  },
+  "thumb": {
+    "title": "What will your change affect?",
+    "sub": "Local · evidence-based · for TypeScript &amp; Next.js",
+    "size": 84
+  },
+  "cover": {
+    "title": "What will your change affect?",
+    "size": 92
+  },
+  "texts": {
+    "title": "X-Ray — see what a code change may affect",
+    "youtubeDescription": "X-Ray — see what a code change may affect (with evidence)\n\nX-Ray is a local-first code intelligence tool for TypeScript, React and Next.js. Point it at a repository, pick a Git diff, and it shows what changed, what may be affected, and what to check — every result with evidence: the exact line, the chain that connects it, and a verified/possible confidence label.\n\n• Runs entirely on your machine — your code is never uploaded and never executed\n• Change impact from any Git diff, including Next.js routes affected through layouts and middleware\n• Honest by design: skipped and unresolved items are listed openly\n• Optional AI, off by default, only with explicit consent\n• Measured, not claimed: verified relationships matched an independent oracle (TypeScript find-references) on 7 real projects\n\nChapters\n{chapters}\n\nMusic: \"Close Up\" by Michael Ramir C. (Mixkit). Voice: Kokoro-82M (Apache-2.0), generated locally.\n#coding #typescript #nextjs #devtools #codeanalysis\n",
+    "instagramCaption": "What will your code change affect? 👀\n\nX-Ray shows it — with evidence for every result:\n✅ the exact line\n✅ the chain that connects it\n✅ verified vs possible\n\n100% local. Your code never leaves your machine. AI is off by default.\n\n#typescript #nextjs #react #webdev #devtools #coding #programming #developer #codereview\n"
+  }
+}
